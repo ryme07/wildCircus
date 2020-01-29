@@ -3,9 +3,7 @@
     top: 0;
     bottom: 0;
     left: 0;
-    right: 0;
-    background: black;
-    color: wheat;
+    right: 0;  
   }
 
   a {
@@ -16,10 +14,21 @@
   }
   
 .child {
-    background: chocolate;
+    background:none;
+    width: 5vw;
+
 }
 
-.btn-openside{
-    margin-left: 3rem;
-    margin-top: 1.5rem;
+.btnMenu{
+    margin-left: 1rem;
+    margin-top: 1rem;
+    background: none;
+    text-decoration: none;
+    border: none;
+    color: #1BA098
+}
+
+.mat-drawer {
+    background-color:black;
+    color: #fafafa;
 }

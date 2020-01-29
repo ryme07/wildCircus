@@ -11,10 +11,12 @@ export class NavbarComponent implements OnInit {
   constructor(private router: Router) { }
 
   ngOnInit() {
+
   }
 
   enter(): void {
     this.router.navigateByUrl('/dashboard');
   }
+
 
 }

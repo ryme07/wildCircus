@@ -1,7 +1,11 @@
+body{
+    min-height: 100vh;
+}
+
 .navbar-container{
     display: flex;
-    justify-content: space-between;
-    margin-top: 2rem; 
+    justify-content: space-between; 
+    padding-top: 2rem;
     
 }
 .logo {

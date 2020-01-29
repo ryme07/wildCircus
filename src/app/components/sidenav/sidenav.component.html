@@ -1,22 +1,19 @@
 <mat-sidenav-container class="example-container">
-    <mat-sidenav #sidenav mode="side">
-        <a>Panier</a>
+  <mat-sidenav #sidenav mode="side">
+    <a>Panier</a>
 
-        <a>Accueil</a>
+    <a>Accueil</a>
 
-        <a>Spectacles</a>
+    <a>Spectacles</a>
 
-        <a>Contact</a>
+    <a>Contact</a>
     
-    </mat-sidenav>
+  </mat-sidenav>
   
-    <mat-sidenav-content class="child">
-    
-      <button class="btnMenu" mat-button (click)="sidenav.toggle()">
-        <mat-icon class="navbar-icon" aria-hidden="false" aria-label="icon myEvent">menu</mat-icon>
-        Menu
-      </button>
+  <mat-sidenav-content class="child">
+    <button class="btnMenu" mat-button (click)="sidenav.toggle()">
+      <mat-icon class="navbar-icon" aria-hidden="false" aria-label="icon myEvent">menu</mat-icon>
+    </button>
+  </mat-sidenav-content>
 
-
-    </mat-sidenav-content>
-  </mat-sidenav-container>
+</mat-sidenav-container>
