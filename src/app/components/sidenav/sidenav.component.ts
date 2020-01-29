@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { MatSidenav } from '@angular/material/sidenav';
 
 @Component({
   selector: 'app-sidenav',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SidenavComponent implements OnInit {
 
+  @ViewChild('sidenav', {static: false}) sidenav: MatSidenav;
+  events: string[] = [];
+  opened: boolean;
+
   constructor() { }
 
   ngOnInit() {
   }
 
+
+  close() {
+    this.sidenav.close();
+  }
 }

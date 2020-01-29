@@ -1,0 +1,25 @@
+.example-container {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: black;
+    color: wheat;
+  }
+
+  a {
+      display: flex;
+      flex-direction: column;
+      padding: 2rem;
+      align-items: center;
+  }
+  
+.child {
+    background: chocolate;
+}
+
+.btn-openside{
+    margin-left: 3rem;
+    margin-top: 1.5rem;
+}
