@@ -1,7 +1,6 @@
-<mat-toolbar>
-    <button class="btn-navbar" mat-button [matMenuTriggerFor]="menu">Menu</button>
-    <mat-menu #menu="matMenu">
-      <button mat-menu-item>Item 1</button>
-      <button mat-menu-item>Item 2</button>
-    </mat-menu>
-</mat-toolbar>
+<div class="navbar-container">
+    <h1 class="logo">Wild Circus</h1>
+    <button class="login" mat-button (click)="enter()">
+        <mat-icon>power_settings_new</mat-icon>
+    </button>
+</div>
