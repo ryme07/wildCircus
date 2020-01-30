@@ -1,3 +1,4 @@
+
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -8,12 +9,15 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { ShopComponent } from './pages/shop/shop.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { SidenavComponent } from './components/sidenav/sidenav.component';
-import { ShowLayoutComponent } from './components/show-layout/show-layout.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatMenuModule} from '@angular/material/menu';
+import { MatMenuModule } from '@angular/material/menu';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import {MatIconModule} from '@angular/material/icon';
-import {MatSidenavModule} from '@angular/material/sidenav';
+import { MatIconModule } from '@angular/material/icon';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { CardsComponent } from './components/cards/cards.component';
+import { RouterModule } from '@angular/router';
+import { ShowsComponent } from './pages/shows/shows.component';
+import { ContactComponent } from './pages/contact/contact.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +27,9 @@ import {MatSidenavModule} from '@angular/material/sidenav';
     ShopComponent,
     NavbarComponent,
     SidenavComponent,
-    ShowLayoutComponent
+    CardsComponent,
+    ShowsComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +38,14 @@ import {MatSidenavModule} from '@angular/material/sidenav';
     MatMenuModule,
     MatToolbarModule,
     MatIconModule,
-    MatSidenavModule
+    MatSidenavModule,
+    RouterModule.forRoot(
+      [],
+      {
+        anchorScrolling: 'enabled',
+        scrollPositionRestoration: 'enabled'
+      }
+    )
   ],
   providers: [],
   bootstrap: [AppComponent]
