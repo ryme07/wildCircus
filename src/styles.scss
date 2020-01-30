@@ -1,6 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 
 @import '~@angular/material/prebuilt-themes/indigo-pink.css';
+@import url('https://fonts.googleapis.com/css?family=Oswald|Roboto&display=swap');
 
 
 html, body, div, span, applet, object, iframe,
@@ -61,6 +62,7 @@ height: 100vh;
 body {
   background:#051622;
   font-family: 'Catamaran', sans-serif;
+// font-family: 'Oswald', sans-serif;
   margin: 0;
 }
 
@@ -92,4 +94,9 @@ body {
     background-color: rgba(0,0,0,0);
     color: rgba(0,0,0,.87);
     width: 18vw;
+}
+.mat-drawer-inner-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
