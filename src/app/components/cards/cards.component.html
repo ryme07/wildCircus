@@ -1,41 +1,33 @@
-<div class="maincontainer">
-    <div class="thecard">
-        <div class="thefront">front of the card</div>
-        <div class="theback">back of the card</div>
-    </div>
 
-    <div class="thecard">
-        <div class="thefront">front of the card</div>
-        <div class="theback">back of the card</div>
-    </div>
+<div class="container">
 
-    <div class="thecard">
-        <div class="thefront">front of the card</div>
-        <div class="theback">back of the card</div>
+    <div class="maincontainer" *ngFor="let ticket of tickets">
+
+        <div class="thecard">
+            <div class="thefront">
+            <p>Nom du Spectacle : {{ticket.title}}</p>
+
+
+            </div>
+            <div class="theback" class="theback">
+                <p>Prix : {{ticket.price}}</p>
+                <p>Date : {{ticket.date}}</p>
+            </div>
+        </div>
+
     </div>
 </div>
 
 <div class="btncontainer">
-    <div class="btnitem">
-        <button class="btnShop" mat-button>
-            <mat-icon class="navbar-icon" aria-hidden="false" aria-label="icon myEvent">add_shopping_cart</mat-icon>
-            Ajouter au Panier
-          </button>
-    </div>
 
-    <div class="btnitem">
-        <button class="btnShop" mat-button>
-            <mat-icon class="navbar-icon" aria-hidden="false" aria-label="icon myEvent">add_shopping_cart</mat-icon>
-            Ajouter au Panier
-          </button>
+    <div *ngFor="let button of buttons">
+        
+        <div class="btnitem">
+            <button mat-raised-button (click)="openModal()">
+                <mat-icon class="navbar-icon" aria-hidden="false" aria-label="icon myEvent">add_shopping_cart</mat-icon>
+            </button>
+        </div>
     </div>
-
-    <div class="btnitem">
-        <button class="btnShop" mat-button>
-            <mat-icon class="navbar-icon" aria-hidden="false" aria-label="icon myEvent">add_shopping_cart</mat-icon>
-            Ajouter au Panier
-          </button>
-    </div>
-
+    
 
 </div>

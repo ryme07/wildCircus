@@ -1,0 +1,92 @@
+
+<div class="containerModal">
+
+
+<h1 mat-dialog-title>Le clown de service</h1>
+<div mat-dialog-content>
+  <p>Quel spectacle voulez-vous choisir ?</p>
+  <mat-form-field>
+<form [formGroup]="ticketForm" (ngSubmit)="sendTicket()">
+
+  <div class="reactive-form">
+
+    <!-- <div class="ticket-form">
+      <div class="form">
+        <input type="date" name="date" formControlName="date" required>
+      </div>
+    </div> -->
+
+    <div class="ticket-form">
+      <div class="form">
+        <label class="label-name"><span class="content-name">Spectacle :</span></label>
+        <input type="select" name="text" formControlName="title" required>
+      </div>
+    </div>
+
+    <div class="ticket-form">
+      <div class="form">
+        <label class="label-name"><span class="content-name">Date :</span></label>
+        <input type="date" name="date" formControlName="date" required>
+      </div>
+    </div>
+
+    <div class="ticket-form">
+      <div class="form">
+        <label class="label-name"><span class="content-name">Nombre de personne(s) : </span></label>
+        <input type="number" name="price" formControlName="price" required>
+      </div>
+    </div>
+
+    <div class="form">
+
+      <button type="button" class="form-btn" (click)="sendTicket()"
+       >Réserver</button>
+    </div>
+  </div>
+</form>
+
+  </mat-form-field>
+</div>
+
+
+
+
+<div mat-dialog-actions>
+  <button mat-button (click)="closeClick()">No Thanks</button>
+  <!-- <button mat-button cdkFocusInitial>Ok</button> -->
+</div>
+
+</div>
+
+
+
+
+<!-- <div class="mainContainer">
+    <form (submit)="myForm.valid && addTicket()" #myForm="ngForm">
+      <input
+        type="text"
+        [(ngModel)]="createTicket.title"
+        name="title"
+        #titleRef="ngModel"
+        required
+      />
+  
+      <div *ngIf="titleRef?.errors?.required && myForm.submitted">
+        Un nom de spectacle est requis.
+      </div>
+  
+      <input
+        type="date"
+        [(ngModel)]="createTicket.date"
+        name="date"
+        #dateRef="ngModel"
+        required
+      />
+      <div *ngIf="dateRef?.errors?.required && myForm.submitted">
+        Une date est requise.
+      </div>
+  
+      <button type="submit">Ajouter</button>
+    </form>
+  </div> -->
+  

@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material';
+import { ModalComponent } from 'src/app/components/modal/modal.component';
+
+
 
 @Component({
   selector: 'app-shop',
@@ -11,5 +15,7 @@ export class ShopComponent implements OnInit {
 
   ngOnInit() {
   }
+
+
 
 }

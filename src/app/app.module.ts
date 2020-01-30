@@ -18,6 +18,12 @@ import { CardsComponent } from './components/cards/cards.component';
 import { RouterModule } from '@angular/router';
 import { ShowsComponent } from './pages/shows/shows.component';
 import { ContactComponent } from './pages/contact/contact.component';
+import { HttpClientModule } from '@angular/common/http';
+import {MatDialogModule} from '@angular/material/dialog';
+import { ModalComponent } from './components/modal/modal.component';
+import {FormsModule } from '@angular/forms';
+import {MatFormFieldModule, MatInputModule} from '@angular/material';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -29,7 +35,8 @@ import { ContactComponent } from './pages/contact/contact.component';
     SidenavComponent,
     CardsComponent,
     ShowsComponent,
-    ContactComponent
+    ContactComponent,
+    ModalComponent
   ],
   imports: [
     BrowserModule,
@@ -39,6 +46,12 @@ import { ContactComponent } from './pages/contact/contact.component';
     MatToolbarModule,
     MatIconModule,
     MatSidenavModule,
+    HttpClientModule,
+    MatDialogModule,
+    FormsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    ReactiveFormsModule,
     RouterModule.forRoot(
       [],
       {
@@ -48,6 +61,7 @@ import { ContactComponent } from './pages/contact/contact.component';
     )
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [ModalComponent]
 })
 export class AppModule { }
