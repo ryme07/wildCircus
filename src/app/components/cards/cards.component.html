@@ -1,17 +1,17 @@
 
 <div class="container">
 
-    <div class="maincontainer" *ngFor="let ticket of tickets">
+    <div class="maincontainer" *ngFor="let show of shows">
 
         <div class="thecard">
             <div class="thefront">
-            <p>Nom du Spectacle : {{ticket.title}}</p>
-
+            <p>Nom du Spectacle : {{show.title}}</p>
+            <img src={{show.image}} alt="image" />
 
             </div>
             <div class="theback" class="theback">
-                <p>Prix : {{ticket.price}}</p>
-                <p>Date : {{ticket.date}}</p>
+                <p>Prix : {{show.price}}</p>
+                <p>Date : {{show.date}}</p>
             </div>
         </div>
 
