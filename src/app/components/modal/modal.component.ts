@@ -1,7 +1,9 @@
 import { Ticket } from './../../shared/models/ticket';
-import { Component, OnInit, Inject } from '@angular/core';
+import { Component, OnInit, Inject, Input } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { FormGroup } from '@angular/forms';
+import { FormGroup, FormBuilder } from '@angular/forms';
+import { TicketService } from '../../shared/services/ticket.service';
+import { Router } from '@angular/router';
 
 
 
@@ -13,21 +15,40 @@ import { FormGroup } from '@angular/forms';
 })
 export class ModalComponent implements OnInit {
 
-  createTicket: Ticket;
+  // createTicket: Ticket;
   ticketForm: FormGroup;
 
-  constructor(public dialogRef: MatDialogRef<ModalComponent>,
-              @Inject(MAT_DIALOG_DATA) public ticketUpdate: Ticket) { }
+  // tslint:disable-next-line: max-line-length
+  constructor(public router: Router, private fb: FormBuilder, public ticketservice: TicketService, public dialogRef: MatDialogRef<ModalComponent>,
+    // tslint:disable-next-line: align
+    @Inject(MAT_DIALOG_DATA) public ticketUpdate: Ticket) {
 
-ngOnInit() {
-}
+    // on initialise le formulaire dans le constructeur
+    this.ticketForm = this.fb.group({
+      title: [''], date: [''], numTicket: ['']
+    });
 
-closeClick(): void {
-this.dialogRef.close();
-}
 
-sendTicket(): void {
+  }
 
-}
+  ngOnInit() {
+
+
+  }
+
+  closeClick(): void {
+    this.dialogRef.close();
+  }
+
+  sendTicket(): void {
+    const createTicketShow = this.ticketForm.value;
+    this.ticketservice.createTicket(createTicketShow).subscribe((data) => {
+      console.log(data);
+    });
+    this.dialogRef.close();
+    this.router.navigateByUrl('/shop');
+
+
+  }
 
 }

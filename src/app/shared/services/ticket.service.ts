@@ -10,6 +10,8 @@ export class TicketService {
 
  static URL = 'http://localhost:3000/tickets';
 
+ editable = false;
+
   constructor(private http: HttpClient) { }
 
   getAllTickets(): Observable<Ticket[]> {
@@ -20,17 +22,19 @@ export class TicketService {
     return this.http.get<Ticket[]>(TicketService.URL + id);
   }
 
-  createTicket(newTicket) {
-    return this.http.post(TicketService.URL, newTicket);
+  createTicket(newTicket): Observable<Ticket[]> {
+    return this.http.post<Ticket[]>(TicketService.URL, newTicket);
   }
 
-  updateTicket(ticketUpdate) {
+  updateTicket(ticketUpdate): Observable<Ticket[]> {
     const id = ticketUpdate.id;
-    return this.http.put(TicketService.URL + id, ticketUpdate);
+    return this.http.put<Ticket[]>(TicketService.URL + id, ticketUpdate);
   }
 
-  deleteTicket(id: number) {
-    return this.http.delete(TicketService.URL + id);
+
+
+  deleteTicket(id: number): Observable<any> {
+  return this.http.delete(TicketService.URL + '/' + id);
   }
 
 

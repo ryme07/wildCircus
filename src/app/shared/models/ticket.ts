@@ -2,8 +2,13 @@ export class Ticket {
     id: number;
     title: string;
     date: Date;
-    price: number;
-    image?: string;
-    // tslint:disable-next-line: variable-name
-    user_id: number;
+    numTicket: number;
+
+    constructor(input?: Ticket) {
+        if (input != null) {
+            Object.assign(this, input);
+        }
+
+    }
+
 }
