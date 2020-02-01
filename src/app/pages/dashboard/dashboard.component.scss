@@ -21,6 +21,29 @@ h1{
     font-weight: 800;
 }
 
+.container-paragraph {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 50%;
+    color: #DEB992;
+    h1 {
+        text-transform: uppercase;
+        font-size: 1em;
+        letter-spacing: 0.8em;
+        padding-bottom: 4em;
+        text-align: center;
+    }
+    h3{
+        padding-bottom: 2em;
+        text-align: center;
+    }
+    p{
+        padding-bottom: 2em;
+        text-align: justify;
+    }
+}
+
 .S1 {
     background: #051622;
 

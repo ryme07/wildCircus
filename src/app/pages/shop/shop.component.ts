@@ -29,6 +29,7 @@ export class ShopComponent implements OnInit {
     this.ticketservice.deleteTicket(id)
     .subscribe();
     console.log('delete');
+    window.location.reload();
 
 
   }
