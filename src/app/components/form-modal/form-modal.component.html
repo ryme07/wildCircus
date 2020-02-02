@@ -1,57 +1,33 @@
-<div class="containerModal">
-    
-    
-    <mat-form-field>
+<form [formGroup]="ticketForm" (ngSubmit)="sendTicket()">
 
-    
+  <div class="reactive-form">
 
-    <h1 mat-dialog-title>Le clown de service</h1>
-    <div mat-dialog-content>
-      <p>Quel spectacle voulez-vous choisir ?</p>
-    
-    <form [formGroup]="ticketForm" (ngSubmit)="sendTicket()">
-    
-      <div class="reactive-form">
-    
-        <div class="ticket-form">
-          <div class="form">
-          <label class="label-name"><span class="content-name">Spectacle : </span></label>
-            <input matInput type="select" name="text" formControlName="title" required>
-          </div>
-        </div>
-    
-        <div class="ticket-form">
-          <div class="form">
-            <label class="label-name"><span class="content-name">Date :</span></label>
-            <input matInput type="date" name="date" formControlName="date" required>
-          </div>
-        </div>
-    
-        <div class="ticket-form">
-          <div class="form">
-            <label class="label-name"><span class="content-name">Nombre de personne(s) : </span></label>
-            <input matInput type="number" name="numticket" formControlName="numTicket" required>
-          </div>
-        </div>
-    
-        <div class="form">
-            <button type="button" class="form-btn" (click)='sendTicket()'
-            *ngIf="ticketservice.editable === false">Créer</button>
-          <button type="button" class="form-btn" (click)='updateTicket()'
-            *ngIf="ticketservice.editable === true">Modifier</button>
-          </div>
 
+    <div class="ticket-form">
+      <div class="form">
+        <label class="label-name"><span class="content-name">Spectacle :</span></label>
+        <input type="select" name="text" formControlName="title" required>
       </div>
-    </form>
-    
-</div>
-</mat-form-field>
-    
-    
-    
-    
-    <!-- <div mat-dialog-actions>
-      <button mat-button (click)="closeClick()">No Thanks</button>
-    </div> -->
-    
     </div>
+
+    <div class="ticket-form">
+      <div class="form">
+        <label class="label-name"><span class="content-name">Date :</span></label>
+        <input type="date" name="date" formControlName="date" required>
+      </div>
+    </div>
+
+    <div class="ticket-form">
+      <div class="form">
+        <label class="label-name"><span class="content-name">Nombre de personne(s) : </span></label>
+        <input type="number" name="numticket" formControlName="numTicket" required>
+      </div>
+    </div>
+
+    <div class="form">
+
+      <button type="button" class="form-btn" (click)="sendTicket()"
+       >Réserver</button>
+    </div>
+  </div>
+</form>

@@ -29,9 +29,9 @@ export class FormModalComponent implements OnInit {
 
   ngOnInit() {
 
-      this.ticketForm.controls.title.setValue(this.ticketToUpdate.title);
-      this.ticketForm.controls.date.setValue(this.ticketToUpdate.date);
-      this.ticketForm.controls.numTicket.setValue(this.ticketToUpdate.numTicket);
+      // this.ticketForm.controls.title.setValue(this.ticketToUpdate.title);
+      // this.ticketForm.controls.date.setValue(this.ticketToUpdate.date);
+      // this.ticketForm.controls.numTicket.setValue(this.ticketToUpdate.numTicket);
   }
 
   sendTicket(): void {
@@ -50,7 +50,7 @@ export class FormModalComponent implements OnInit {
       console.log(eventPosted);
     });
     this.dialogRef.close();
-    this.ticketservice.editable = false;
+   
   }
 
 }

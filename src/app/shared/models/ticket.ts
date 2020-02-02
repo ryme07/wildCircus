@@ -1,14 +1,13 @@
 export class Ticket {
-    id: number;
-    title: string;
+    id?: number;
     date: Date;
     numTicket: number;
 
-    constructor(input?: Ticket) {
-        if (input != null) {
-            Object.assign(this, input);
-        }
+    // constructor(input?: Ticket) {
+    //     if (input != null) {
+    //         Object.assign(this, input);
+    //     }
 
-    }
+    // }
 
 }

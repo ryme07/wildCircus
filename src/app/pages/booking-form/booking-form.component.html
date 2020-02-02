@@ -1,0 +1,45 @@
+<form [formGroup]="ticketForm" (ngSubmit)="sendTicket()">
+
+    <div class="reactive-form">
+
+
+        <div class="ticket-form">
+            <div class="form">
+                <label class="label-name"><span class="content-name">Name :</span></label>
+                <input type="text" [(ngModel)]="user.lastname" name="text" formControlName="lastname" required>
+            </div>
+        </div>
+
+
+        <div class="form">
+            <label class="label-name"><span class="content-name">Firstname :</span></label>
+            <input type="text" [(ngModel)]="user.firstname" name="text" formControlName="firstname" required>
+        </div>
+
+        <div class="form">
+            <label class="label-name"><span class="content-name">Email :</span></label>
+            <input type="email" [(ngModel)]="user.email" name="text" formControlName="email" required>
+        </div>
+
+
+        <div class="ticket-form">
+            <div class="form">
+                <label class="label-name"><span class="content-name">Date :</span></label>
+                <input type="date" [(ngModel)]="ticket.date" name="date" formControlName="date" required>
+            </div>
+        </div>
+
+        <div class="ticket-form">
+            <div class="form">
+                <label class="label-name"><span class="content-name">Nombre de personne(s) : </span></label>
+                <input type="number" [(ngModel)]="ticket.numTicket" name="numticket" formControlName="numTicket" required>
+            </div>
+        </div>
+
+        <div class="form">
+
+            <button type="button" class="form-btn" (click)="sendTicket()">Réserver</button>
+
+        </div>
+    </div>
+</form>

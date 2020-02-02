@@ -25,6 +25,7 @@ import { ShopComponent } from './pages/shop/shop.component';
 import { ShowsComponent } from './pages/shows/shows.component';
 import {MatSelectModule} from '@angular/material/select';
 import { Ticket } from './shared/models/ticket';
+import { BookingFormComponent } from './pages/booking-form/booking-form.component';
 
 
 
@@ -40,7 +41,8 @@ import { Ticket } from './shared/models/ticket';
     ShowsComponent,
     ContactComponent,
     ModalComponent,
-    FormModalComponent
+    FormModalComponent,
+    BookingFormComponent
   ],
   imports: [
     BrowserModule,
