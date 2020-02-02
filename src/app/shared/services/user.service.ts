@@ -29,7 +29,7 @@ export class UserService {
     return this.http.put(UserService.URL + id, userUpdate);
   }
 
-  deleteTicket(id: number): Observable<any> {
+  deleteUser(id: number): Observable<any> {
   return this.http.delete(UserService.URL + '/' + id);
   }
 

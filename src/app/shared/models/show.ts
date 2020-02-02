@@ -1,7 +1,7 @@
 export class Show {
-    id: number;
-    title: string;
+    id?: number;
+    title?: string;
     date?: Date;
-    price: number;
+    price?: number;
     image?: string;
 }

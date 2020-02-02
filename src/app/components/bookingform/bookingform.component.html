@@ -1,4 +1,52 @@
-<form [formGroup]="ticketForm" (ngSubmit)="sendTicket()">
+
+<form (submit)="myForm.valid && sendTicket()" #myForm="ngForm" class="card-white text-center">
+    <h2>Book your tickets</h2>
+    
+<h3>Name :</h3>
+<input type="text" [(ngModel)]="user.lastname" name="name" #nameRef=ngModel required>
+<div *ngIf="nameRef?.errors?.required && myForm.submitted">the Name field is required</div>
+
+<h3>firstName :</h3>
+<input type="text" [(ngModel)]="user.firstname" name="name" #nameRef=ngModel required>
+<div *ngIf="nameRef?.errors?.required && myForm.submitted">the Name field is required</div>
+
+<h3>Email :</h3>
+<input type="email" [(ngModel)]="user.email" name="email" #emailRef=ngModel required>
+<div *ngIf="emailRef?.errors?.required && myForm.submitted">the Email field is required</div>
+
+<h3>Date :</h3>
+<input type="date" value="yyyy-mm--jj" min="2020-01-01" max="2020-12-31" [(ngModel)]="ticket.date" name="date" #dateRef=ngModel required>
+<div *ngIf="dateRef?.errors?.required && myForm.submitted">the date field is required</div>
+
+<h3>Number of tickets :</h3>
+<input type="number" [(ngModel)]="ticket.numTicket" name="number" #numberRef=ngModel required>
+<div *ngIf="numberRef?.errors?.required && myForm.submitted">the Number of tickets field is required</div>
+
+  <button mat-raised-button (click)="confirmTicket()">
+    <mat-icon class="navbar-icon" aria-hidden="false" aria-label="icon myEvent">add_shopping_cart</mat-icon>
+</button>
+
+</form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <form [formGroup]="ticketForm" (ngSubmit)="sendTicket()">
 
     <div class="reactive-form">
 
@@ -6,14 +54,8 @@
         <div class="ticket-form">
             <div class="form">
                 <label class="label-name"><span class="content-name">Name :</span></label>
-                <input type="text" [(ngModel)]="user.lastname" name="text" formControlName="lastname" required>
+                <input type="text" [(ngModel)]="user.name" name="text" formControlName="name" required>
             </div>
-        </div>
-
-
-        <div class="form">
-            <label class="label-name"><span class="content-name">Firstname :</span></label>
-            <input type="text" [(ngModel)]="user.firstname" name="text" formControlName="firstname" required>
         </div>
 
         <div class="form">
@@ -38,10 +80,10 @@
 
         <div class="form">
 
-            <button type="button" class="form-btn" (click)="confirmTicket()">Réserver</button>
+            <button type="button" class="form-btn" (click)="sendTicket()">Réserver</button>
 
         </div>
     </div>
-</form>
+</form> -->
 
 

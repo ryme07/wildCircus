@@ -2,15 +2,16 @@ export class User {
 
 
     id?: number;
+    // name: string;
     lastname: string;
     firstname: string;
     email: string;
-    tickets!: Tickets[];
+    tickets: Tickets[];
 
 }
 
 interface Tickets {
 
-    date: Date;
     numTicket: number;
+    date: Date;
 }

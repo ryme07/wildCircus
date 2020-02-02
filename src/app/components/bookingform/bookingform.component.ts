@@ -1,8 +1,10 @@
+import { MatDialog } from '@angular/material/dialog';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { User } from 'src/app/shared/models/user';
 import { Ticket } from 'src/app/shared/models/ticket';
 import { UserService } from 'src/app/shared/services/user.service';
+import { FormModalComponent } from '../form-modal/form-modal.component';
 
 @Component({
   selector: 'app-bookingform',
@@ -11,21 +13,23 @@ import { UserService } from 'src/app/shared/services/user.service';
 })
 export class BookingformComponent implements OnInit {
 
-  ticketForm: FormGroup;
+  // ticketForm: FormGroup;
   user: User;
   ticket: Ticket;
 
-  constructor(private fb: FormBuilder, private userService: UserService) {
+  constructor(private fb: FormBuilder, private userService: UserService, public dialog: MatDialog) {
 
 
-    this.ticketForm = this.fb.group({
-      lastname: [''], firstname: [''], email: [''], date: [''], numTicket: ['']
-    });
+    // this.ticketForm = this.fb.group({
+    //   name: [''], email: [''], date: [''], numTicket: ['']
+    // });
 
 
   }
 
   ngOnInit() {
+
+    // a voir...
     this.user = new User();
     this.ticket = new Ticket();
   }
@@ -49,6 +53,14 @@ export class BookingformComponent implements OnInit {
   }
 
   confirmTicket() {
+
+    const dialogRef = this.dialog.open(FormModalComponent, {
+      width: '550px',
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+    });
 
   }
 }

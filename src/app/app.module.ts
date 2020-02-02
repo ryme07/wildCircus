@@ -26,7 +26,8 @@ import {MatSelectModule} from '@angular/material/select';
 import { Ticket } from './shared/models/ticket';
 import { BookingformComponent } from './components/bookingform/bookingform.component';
 import { BookingComponent } from './pages/booking/booking.component';
-
+import { AdminComponent } from './pages/admin/admin.component';
+import { MatTableModule } from '@angular/material/table';
 
 
 @NgModule({
@@ -42,7 +43,8 @@ import { BookingComponent } from './pages/booking/booking.component';
     ModalComponent,
     FormModalComponent,
     BookingformComponent,
-    BookingComponent
+    BookingComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,
@@ -59,6 +61,7 @@ import { BookingComponent } from './pages/booking/booking.component';
     MatInputModule,
     ReactiveFormsModule,
     MatSelectModule,
+    MatTableModule,
     RouterModule.forRoot(
       [],
       {

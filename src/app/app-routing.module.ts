@@ -1,3 +1,4 @@
+import { AdminComponent } from './pages/admin/admin.component';
 import { BookingComponent } from './pages/booking/booking.component';
 
 import { ContactComponent } from './pages/contact/contact.component';
@@ -14,6 +15,7 @@ const routes: Routes = [
   {path: 'booking', component: BookingComponent},
   {path: 'shows', component: ShowsComponent},
   {path: 'contact', component: ContactComponent},
+  {path: 'admin', component: AdminComponent},
   { path: '', pathMatch: 'full', redirectTo: 'home' },
 ];
 

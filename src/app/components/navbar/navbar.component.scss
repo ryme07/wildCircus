@@ -11,7 +11,7 @@ body{
 .logo {
     margin-left: 2rem;
     font-size: large;
-    color: #DEB992;
+    color: transparent;
 }
 .login{
     margin-right: 2rem;
@@ -19,6 +19,7 @@ body{
     text-decoration: none;
     border: none;
     color: #DEB992;
+    cursor: pointer;
 }
 
 
