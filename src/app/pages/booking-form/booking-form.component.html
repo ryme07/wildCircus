@@ -38,8 +38,18 @@
 
         <div class="form">
 
-            <button type="button" class="form-btn" (click)="sendTicket()">Réserver</button>
+            <button type="button" class="form-btn" (click)="confirmTicket()">Réserver</button>
 
         </div>
     </div>
 </form>
+
+<div>
+
+<p>{{user.lastname}}</p>
+<p>{{user.firstname}}</p>
+<p>{{user.email}}</p>
+<!-- <p>{{user?.tickets[0].numTicket}}</p> -->
+
+
+</div>
