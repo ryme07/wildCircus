@@ -1,15 +1,15 @@
-import { UserService } from './../../shared/services/user.service';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
-import { User } from '../../shared/models/user';
-import { Ticket } from '../../shared/models/ticket';
+import { User } from 'src/app/shared/models/user';
+import { Ticket } from 'src/app/shared/models/ticket';
+import { UserService } from 'src/app/shared/services/user.service';
 
 @Component({
-  selector: 'app-booking-form',
-  templateUrl: './booking-form.component.html',
-  styleUrls: ['./booking-form.component.scss']
+  selector: 'app-bookingform',
+  templateUrl: './bookingform.component.html',
+  styleUrls: ['./bookingform.component.scss']
 })
-export class BookingFormComponent implements OnInit {
+export class BookingformComponent implements OnInit {
 
   ticketForm: FormGroup;
   user: User;
@@ -51,5 +51,4 @@ export class BookingFormComponent implements OnInit {
   confirmTicket() {
 
   }
-
 }
