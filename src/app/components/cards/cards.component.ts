@@ -1,6 +1,5 @@
 import { ShowService } from './../../shared/services/show.service';
 import { ModalComponent } from './../modal/modal.component';
-import { ShopComponent } from './../../pages/shop/shop.component';
 import { Component, OnInit } from '@angular/core';
 import { Ticket } from '../../shared/models/ticket';
 import { TicketService } from '../../shared/services/ticket.service';

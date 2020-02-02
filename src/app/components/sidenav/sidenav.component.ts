@@ -24,7 +24,7 @@ export class SidenavComponent implements OnInit {
   }
 
   show(): void {
-    this.router.navigateByUrl('/show');
+    this.router.navigateByUrl('/shows');
   }
   mainPage(): void {
     this.router.navigateByUrl('dashboard');
@@ -32,7 +32,7 @@ export class SidenavComponent implements OnInit {
   contactus(): void {
     this.router.navigateByUrl('/contact');
   }
-  shop(): void {
-    this.router.navigateByUrl('/shop');
+  booking(): void {
+    this.router.navigateByUrl('/booking');
   }
 }

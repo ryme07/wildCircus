@@ -5,9 +5,6 @@ import { FormGroup, FormBuilder } from '@angular/forms';
 import { TicketService } from '../../shared/services/ticket.service';
 import { Router } from '@angular/router';
 
-
-
-
 @Component({
   selector: 'app-modal',
   templateUrl: './modal.component.html',
@@ -33,6 +30,10 @@ export class ModalComponent implements OnInit {
 
   ngOnInit() {
 
+      // this.ticketForm.controls.title.setValue(this.ticketToUpdate.title);
+      // this.ticketForm.controls.date.setValue(this.ticketToUpdate.date);
+      // this.ticketForm.controls.numTicket.setValue(this.ticketToUpdate.numTicket);
+
 
   }
 
@@ -41,14 +42,23 @@ export class ModalComponent implements OnInit {
   }
 
   sendTicket(): void {
-    const createTicketShow = this.ticketForm.value;
-    this.ticketservice.createTicket(createTicketShow).subscribe((data) => {
-      console.log(data);
-    });
-    this.dialogRef.close();
-    this.router.navigateByUrl('/shop');
-
-
+  //   const createTicketShow = this.ticketForm.value;
+  //   this.ticketservice.createTicket(createTicketShow).subscribe((data) => {
+  //     console.log(data);
+  //   });
+  //   this.dialogRef.close();
+  //   // this.router.navigateByUrl('/shop');
   }
+
+
+   // updateTicket(): void {
+  //   const ticketToUpdate: Ticket = this.ticketForm.value;
+  //   ticketToUpdate.id = this.ticketToUpdate.id;
+
+  //   this.ticketservice.updateTicket(ticketToUpdate).subscribe((eventPosted) => {
+  //     console.log(eventPosted);
+  //   });
+  //   this.dialogRef.close();
+  // }
 
 }

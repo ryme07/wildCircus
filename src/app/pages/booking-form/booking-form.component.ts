@@ -44,7 +44,7 @@ export class BookingFormComponent implements OnInit {
       ]
 
     }).subscribe((data) => this.user = data);
-    console.log('ajouté');
+    console.log('Ok');
 
   }
 

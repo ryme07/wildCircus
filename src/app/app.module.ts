@@ -21,7 +21,6 @@ import { SidenavComponent } from './components/sidenav/sidenav.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { HomeComponent } from './pages/home/home.component';
-import { ShopComponent } from './pages/shop/shop.component';
 import { ShowsComponent } from './pages/shows/shows.component';
 import {MatSelectModule} from '@angular/material/select';
 import { Ticket } from './shared/models/ticket';
@@ -34,7 +33,6 @@ import { BookingFormComponent } from './pages/booking-form/booking-form.componen
     AppComponent,
     HomeComponent,
     DashboardComponent,
-    ShopComponent,
     NavbarComponent,
     SidenavComponent,
     CardsComponent,
