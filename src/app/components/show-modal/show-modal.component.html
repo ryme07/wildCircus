@@ -1,0 +1,37 @@
+<div class="containerModal">
+
+
+    <h1 mat-dialog-title>Edit :</h1>
+    <div mat-dialog-content *ngIf="show">
+      <mat-form-field>
+        <form (submit)="myForm.valid && updateShow()" #myForm="ngForm" class="card-white text-center">
+          <h2>Edit</h2>
+          
+      <h3>Title :</h3>
+      <input type="text" [(ngModel)]="show.title" name="title" #nameRef=ngModel>
+      
+      
+      <h3>Price :</h3>
+      <input type="text" [(ngModel)]="show.price" name="price" #nameRef=ngModel>
+      
+      
+      <h3>Date :</h3>
+      <input type="date" [(ngModel)]="show.date" name="date" #emailRef=ngModel>
+      
+    
+      
+        <button mat-raised-button (click)="updateShow(show)">
+          Edit
+      </button>
+      
+      </form>
+    
+      </mat-form-field>
+    </div>
+    
+    
+    <div mat-dialog-actions>
+      <button mat-button (click)="closeClick()">No Thanks</button>
+    </div>
+    
+    </div>

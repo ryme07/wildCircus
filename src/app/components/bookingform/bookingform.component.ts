@@ -13,16 +13,12 @@ import { FormModalComponent } from '../form-modal/form-modal.component';
 })
 export class BookingformComponent implements OnInit {
 
-  // ticketForm: FormGroup;
+
   user: User;
   ticket: Ticket;
 
-  constructor(private fb: FormBuilder, private userService: UserService, public dialog: MatDialog) {
+  constructor(private userService: UserService, public dialog: MatDialog) {
 
-
-    // this.ticketForm = this.fb.group({
-    //   name: [''], email: [''], date: [''], numTicket: ['']
-    // });
 
 
   }

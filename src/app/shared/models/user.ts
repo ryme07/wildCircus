@@ -11,7 +11,7 @@ export class User {
 }
 
 interface Tickets {
-
+    id?: number;
     numTicket: number;
     date: Date;
 }

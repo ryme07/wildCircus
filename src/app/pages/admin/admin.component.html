@@ -1,4 +1,7 @@
-<button [routerLink]="['/dashboard']">Return</button>
+<button class="btn" mat-raised-button [routerLink]="['/dashboard']">
+  <mat-icon class="navbar-icon" aria-hidden="false" aria-label="icon myEvent">keyboard_backspace</mat-icon>
+</button>
+
 <section>
 
   
@@ -10,7 +13,9 @@
   <p>Date : {{user.tickets[0].date | date: 'd MMMM , y'}}</p>
   <p>Tickets : {{user.tickets[0].numTicket}}</p>
   
-  <button (click)="edit()">Edit</button>
+  <button mat-raised-button (click)="edit(user)">
+    Edit
+</button>
   <button (click)="delete(user.id)">Delete</button>
   </div>
 

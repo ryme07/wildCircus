@@ -22,7 +22,7 @@
 <input type="number" [(ngModel)]="ticket.numTicket" name="number" #numberRef=ngModel required>
 <div *ngIf="numberRef?.errors?.required && myForm.submitted">the Number of tickets field is required</div>
 
-  <button mat-raised-button (click)="confirmTicket()">
+  <button class="btnconfirm" mat-raised-button (click)="confirmTicket()">
     <mat-icon class="navbar-icon" aria-hidden="false" aria-label="icon myEvent">add_shopping_cart</mat-icon>
 </button>
 

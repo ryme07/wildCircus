@@ -1,6 +1,6 @@
 section {
-    height: 100vh;
-    width: 100vw;
+    height: 90vh;
+    // width: 100vw;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -14,6 +14,7 @@ section {
     padding: 5em;
     flex-direction: row;
     flex-wrap: wrap;
+    margin-right: 2rem;
 
     p{
         padding-bottom: 0.5em;
@@ -29,4 +30,11 @@ section {
 
 p{
     color: white;
+}
+
+.btn {
+    background: none;
+    color: #DEB992;
+    border: none;
+    text-decoration: none;
 }

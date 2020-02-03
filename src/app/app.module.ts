@@ -28,6 +28,7 @@ import { BookingformComponent } from './components/bookingform/bookingform.compo
 import { BookingComponent } from './pages/booking/booking.component';
 import { AdminComponent } from './pages/admin/admin.component';
 import { MatTableModule } from '@angular/material/table';
+import { ShowModalComponent } from './components/show-modal/show-modal.component';
 
 
 @NgModule({
@@ -44,7 +45,8 @@ import { MatTableModule } from '@angular/material/table';
     FormModalComponent,
     BookingformComponent,
     BookingComponent,
-    AdminComponent
+    AdminComponent,
+    ShowModalComponent
   ],
   imports: [
     BrowserModule,
@@ -72,6 +74,6 @@ import { MatTableModule } from '@angular/material/table';
   ],
   providers: [],
   bootstrap: [AppComponent],
-  entryComponents: [ModalComponent, FormModalComponent]
+  entryComponents: [ModalComponent, FormModalComponent, ShowModalComponent]
 })
 export class AppModule { }

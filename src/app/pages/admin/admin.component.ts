@@ -1,6 +1,9 @@
 import { UserService } from './../../shared/services/user.service';
 import { Component, OnInit } from '@angular/core';
 import { User } from 'src/app/shared/models/user';
+import { MatDialog } from '@angular/material';
+import { ModalComponent } from 'src/app/components/modal/modal.component';
+import { FormModalComponent } from 'src/app/components/form-modal/form-modal.component';
 
 @Component({
   selector: 'app-admin',
@@ -13,7 +16,7 @@ export class AdminComponent implements OnInit {
   public users: User[] = [];
 
 
-  constructor(private userService: UserService) {
+  constructor(private userService: UserService, public dialog: MatDialog) {
 
     this.userService.getAllUsers()
     .subscribe((data) => {
@@ -25,7 +28,16 @@ export class AdminComponent implements OnInit {
   ngOnInit() {
   }
 
-  edit(): void {
+  edit(user: User): void {
+    this.userService.toUpdate = true;
+    const dialogRef = this.dialog.open(ModalComponent, {
+      width: '550px',
+      data : user,
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+    });
 
   }
 

@@ -1,9 +1,10 @@
+import { User } from './../../shared/models/user';
 import { Ticket } from './../../shared/models/ticket';
-import { Component, OnInit, Inject, Input } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { FormGroup, FormBuilder } from '@angular/forms';
-import { TicketService } from '../../shared/services/ticket.service';
+
 import { Router } from '@angular/router';
+import { UserService } from 'src/app/shared/services/user.service';
 
 @Component({
   selector: 'app-modal',
@@ -12,28 +13,22 @@ import { Router } from '@angular/router';
 })
 export class ModalComponent implements OnInit {
 
-  // createTicket: Ticket;
-  ticketForm: FormGroup;
+
+  user = new User();
+  ticket: Ticket;
 
   // tslint:disable-next-line: max-line-length
-  constructor(public router: Router, private fb: FormBuilder, public ticketservice: TicketService, public dialogRef: MatDialogRef<ModalComponent>,
-    // tslint:disable-next-line: align
-    @Inject(MAT_DIALOG_DATA) public ticketUpdate: Ticket) {
-
-    // on initialise le formulaire dans le constructeur
-    this.ticketForm = this.fb.group({
-      title: [''], date: [''], numTicket: ['']
-    });
+  constructor(private userService: UserService, public router: Router, public dialogRef: MatDialogRef<ModalComponent>,
+              @Inject(MAT_DIALOG_DATA) public userToUpdate: User) { }
 
 
-  }
+
 
   ngOnInit() {
 
-      // this.ticketForm.controls.title.setValue(this.ticketToUpdate.title);
-      // this.ticketForm.controls.date.setValue(this.ticketToUpdate.date);
-      // this.ticketForm.controls.numTicket.setValue(this.ticketToUpdate.numTicket);
-
+    if (this.userService.toUpdate === true) {
+      this.user = this.userToUpdate;
+    }
 
   }
 
@@ -42,23 +37,29 @@ export class ModalComponent implements OnInit {
   }
 
   sendTicket(): void {
-  //   const createTicketShow = this.ticketForm.value;
-  //   this.ticketservice.createTicket(createTicketShow).subscribe((data) => {
-  //     console.log(data);
-  //   });
-  //   this.dialogRef.close();
-  //   // this.router.navigateByUrl('/shop');
+    // this.userService.createUser({
+    //   lastname: this.user.lastname,
+    //   firstname: this.user.firstname,
+    //   email: this.user.email,
+    //   tickets: [
+    //     {
+    //       date: this.ticket.date,
+    //       numTicket: this.ticket.numTicket
+    //     }
+    //   ]
+
+    // }).subscribe((data) => this.user = data);
+    // console.log('Ok');
+    // this.dialogRef.close();
+
   }
 
 
-   // updateTicket(): void {
-  //   const ticketToUpdate: Ticket = this.ticketForm.value;
-  //   ticketToUpdate.id = this.ticketToUpdate.id;
+  updateTicket(newUser: User): void {
 
-  //   this.ticketservice.updateTicket(ticketToUpdate).subscribe((eventPosted) => {
-  //     console.log(eventPosted);
-  //   });
-  //   this.dialogRef.close();
-  // }
+    this.userService.updateUser(newUser.id, newUser.tickets[0].id).subscribe();
+
+    this.dialogRef.close();
+  }
 
 }
