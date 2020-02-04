@@ -1,23 +1,33 @@
-
 <div class="container">
 
     <div class="maincontainer" *ngFor="let show of shows">
 
-        <div class="thecard">
+        <div class="thecard" *ngIf="show" >
             <div class="thefront">
-            <p>Nom du Spectacle : {{show.title}}</p>
+                <img src="{{ show.image }}" />
+
+                <div class="ribbon">
+
+                    <span> {{show.title}}</span>
+                </div>
 
             </div>
             <div class="theback" class="theback">
-                <p>Prix : {{show.price}}</p>
+                <p>Price : {{show.price}}</p>
                 <p>Date : {{show.date}}</p>
             </div>
         </div>
+        <button class="btnedit" (click)="editShow(show)">
+        
+            <mat-icon class="navbar-icon" aria-hidden="false" aria-label="icon myEvent">edit</mat-icon>
+        
+        </button>
+      
 
-        <div class="btnitem">
+        <!-- <div class="btnitem">
             <button mat-raised-button (click)="openModal()">
                 <mat-icon class="navbar-icon" aria-hidden="false" aria-label="icon myEvent">add_shopping_cart</mat-icon>
             </button>
 
-    </div>
+        </div> -->
 </div>

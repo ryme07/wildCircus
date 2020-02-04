@@ -21,11 +21,14 @@ import { SidenavComponent } from './components/sidenav/sidenav.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { HomeComponent } from './pages/home/home.component';
-import { ShopComponent } from './pages/shop/shop.component';
 import { ShowsComponent } from './pages/shows/shows.component';
 import {MatSelectModule} from '@angular/material/select';
 import { Ticket } from './shared/models/ticket';
-
+import { BookingformComponent } from './components/bookingform/bookingform.component';
+import { BookingComponent } from './pages/booking/booking.component';
+import { AdminComponent } from './pages/admin/admin.component';
+import { MatTableModule } from '@angular/material/table';
+import { ShowModalComponent } from './components/show-modal/show-modal.component';
 
 
 @NgModule({
@@ -33,14 +36,17 @@ import { Ticket } from './shared/models/ticket';
     AppComponent,
     HomeComponent,
     DashboardComponent,
-    ShopComponent,
     NavbarComponent,
     SidenavComponent,
     CardsComponent,
     ShowsComponent,
     ContactComponent,
     ModalComponent,
-    FormModalComponent
+    FormModalComponent,
+    BookingformComponent,
+    BookingComponent,
+    AdminComponent,
+    ShowModalComponent
   ],
   imports: [
     BrowserModule,
@@ -57,6 +63,7 @@ import { Ticket } from './shared/models/ticket';
     MatInputModule,
     ReactiveFormsModule,
     MatSelectModule,
+    MatTableModule,
     RouterModule.forRoot(
       [],
       {
@@ -67,6 +74,6 @@ import { Ticket } from './shared/models/ticket';
   ],
   providers: [],
   bootstrap: [AppComponent],
-  entryComponents: [ModalComponent, FormModalComponent]
+  entryComponents: [ModalComponent, FormModalComponent, ShowModalComponent]
 })
 export class AppModule { }

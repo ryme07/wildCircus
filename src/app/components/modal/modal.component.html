@@ -2,91 +2,47 @@
 <div class="containerModal">
 
 
-<h1 mat-dialog-title>Le clown de service</h1>
-<div mat-dialog-content>
-  <p>Quel spectacle voulez-vous choisir ?</p>
+<h1 mat-dialog-title>Edit :</h1>
+<div mat-dialog-content *ngIf="user">
   <mat-form-field>
-<form [formGroup]="ticketForm" (ngSubmit)="sendTicket()">
+    <form (submit)="myForm.valid && sendTicket()" #myForm="ngForm" class="card-white text-center">
+      <h2>Edit</h2>
+      
+  <h3>Name :</h3>
+  <input type="text" [(ngModel)]="user.lastname" name="lastname" #nameRef=ngModel>
+  
+  
+  <h3>firstName :</h3>
+  <input type="text" [(ngModel)]="user.firstname" name="firstname" #nameRef=ngModel>
+  
+  
+  <h3>Email :</h3>
+  <input type="email" [(ngModel)]="user.email" name="email" #emailRef=ngModel>
+  
+  
+  <h3>Date :</h3>
+  <input type="date" value="yyyy-mm--jj" min="2020-01-01" max="2020-12-31" [(ngModel)]="user.tickets[0].date" name="date" #dateRef=ngModel>
+  
+  
+  <h3>Number of tickets :</h3>
+  <input type="number" [(ngModel)]="user.tickets[0].numTicket" name="number" #numberRef=ngModel>
 
-  <div class="reactive-form">
-
-    <!-- <div class="ticket-form">
-      <div class="form">
-        <input type="date" name="date" formControlName="date" required>
-      </div>
-    </div> -->
-
-    <div class="ticket-form">
-      <div class="form">
-        <label class="label-name"><span class="content-name">Spectacle :</span></label>
-        <input type="select" name="text" formControlName="title" required>
-      </div>
-    </div>
-
-    <div class="ticket-form">
-      <div class="form">
-        <label class="label-name"><span class="content-name">Date :</span></label>
-        <input type="date" name="date" formControlName="date" required>
-      </div>
-    </div>
-
-    <div class="ticket-form">
-      <div class="form">
-        <label class="label-name"><span class="content-name">Nombre de personne(s) : </span></label>
-        <input type="number" name="numticket" formControlName="numTicket" required>
-      </div>
-    </div>
-
-    <div class="form">
-
-      <button type="button" class="form-btn" (click)="sendTicket()"
-       >Réserver</button>
-    </div>
-  </div>
-</form>
+  
+    <button mat-raised-button (click)="updateTicket(user)">
+      Edit
+  </button>
+  
+  </form>
 
   </mat-form-field>
 </div>
 
 
-
-
 <div mat-dialog-actions>
   <button mat-button (click)="closeClick()">No Thanks</button>
-  <!-- <button mat-button cdkFocusInitial>Ok</button> -->
 </div>
 
 </div>
 
 
-
-
-<!-- <div class="mainContainer">
-    <form (submit)="myForm.valid && addTicket()" #myForm="ngForm">
-      <input
-        type="text"
-        [(ngModel)]="createTicket.title"
-        name="title"
-        #titleRef="ngModel"
-        required
-      />
-  
-      <div *ngIf="titleRef?.errors?.required && myForm.submitted">
-        Un nom de spectacle est requis.
-      </div>
-  
-      <input
-        type="date"
-        [(ngModel)]="createTicket.date"
-        name="date"
-        #dateRef="ngModel"
-        required
-      />
-      <div *ngIf="dateRef?.errors?.required && myForm.submitted">
-        Une date est requise.
-      </div>
-  
-      <button type="submit">Ajouter</button>
-    </form>
-  </div> -->
   

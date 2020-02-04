@@ -1,57 +1,11 @@
-<div class="containerModal">
-    
-    
-    <mat-form-field>
-
-    
-
-    <h1 mat-dialog-title>Le clown de service</h1>
-    <div mat-dialog-content>
-      <p>Quel spectacle voulez-vous choisir ?</p>
-    
-    <form [formGroup]="ticketForm" (ngSubmit)="sendTicket()">
-    
-      <div class="reactive-form">
-    
-        <div class="ticket-form">
-          <div class="form">
-          <label class="label-name"><span class="content-name">Spectacle : </span></label>
-            <input matInput type="select" name="text" formControlName="title" required>
-          </div>
-        </div>
-    
-        <div class="ticket-form">
-          <div class="form">
-            <label class="label-name"><span class="content-name">Date :</span></label>
-            <input matInput type="date" name="date" formControlName="date" required>
-          </div>
-        </div>
-    
-        <div class="ticket-form">
-          <div class="form">
-            <label class="label-name"><span class="content-name">Nombre de personne(s) : </span></label>
-            <input matInput type="number" name="numticket" formControlName="numTicket" required>
-          </div>
-        </div>
-    
-        <div class="form">
-            <button type="button" class="form-btn" (click)='sendTicket()'
-            *ngIf="ticketservice.editable === false">Créer</button>
-          <button type="button" class="form-btn" (click)='updateTicket()'
-            *ngIf="ticketservice.editable === true">Modifier</button>
-          </div>
-
-      </div>
-    </form>
-    
+<div class="modal" id="modal-content-wrapper">
+  <header id="modal-header">
+      <h1 id="modal-title">Validate !</h1>
+  </header>
+  <section id="modal-body">
+      <p>Thank you</p>
+  </section>
+  <footer id="modal-footer">
+      <button mat-raised-button id="modal-cancel-button" (click)="closeClick()">Return</button>
+  </footer>
 </div>
-</mat-form-field>
-    
-    
-    
-    
-    <!-- <div mat-dialog-actions>
-      <button mat-button (click)="closeClick()">No Thanks</button>
-    </div> -->
-    
-    </div>

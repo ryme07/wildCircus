@@ -8,7 +8,7 @@ import { Show } from '../models/show';
 })
 export class ShowService {
 
-  static URL = 'http://localhost:3000/shows';
+  static URL = 'http://localhost:3000/shows/';
 
   constructor(private http: HttpClient) { }
 
